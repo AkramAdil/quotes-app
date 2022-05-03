@@ -1,0 +1,96 @@
+.main-content {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 50px;
+    width: 100%;
+}
+.main-content .personal-picture img {
+    padding: 5px;
+    height: 400px;
+    width: 340px;
+    border-radius: 0;
+    border: #158467 3px solid;
+}
+.main-content .quote {
+    margin-right: 20px;
+    margin-left: 20px;
+    direction: rtl;
+    border-left: 3px solid #065446;
+    height: 380px;
+}
+.main-content .quote p {
+    font-size: 20px;
+    width: 610px;
+    line-height: 25px;
+    margin-bottom: 15px;
+
+}
+.main-content .quote .source {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+.main-content .quote .source:hover {
+    color: #065446;
+}
+
+@media screen and (max-width: 992px) {
+    .main-content .personal-picture {
+        height: 320px;
+        width: 270px;
+    }
+    .main-content .personal-picture img {
+        height: 100%;
+        width: 100%;
+    }
+    .main-content .quote {
+        width: 400px;
+        height: 320px;
+    }
+    .main-content .quote p {
+        font-size: 16px;
+        width: 100%;
+    }
+    .main-content .quote .source {
+        font-weight: bold;
+        font-size: 14px;
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-content .personal-picture {
+        height: 370px;
+        width: 300px;
+    }
+    .main-content .personal-picture img {
+        height: 100%;
+        width: 100%;
+    }
+    .main-content .quote {
+        margin-top: 15px;
+        height: auto;
+        text-align: center;
+    }
+    .main-content .quote p {
+        font-size: 18px;
+    }
+    .main-content .quote {
+        top: 50px;
+        border-left: none;
+
+    }
+    .other-quote{
+        display: flex;
+        flex-direction: row-reverse;
+        margin-bottom: 10px;
+    }
+    .other-quote button {
+        position: static;
+    }
+}

@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, { useState, useMemo } from 'react';
+import { Route,Routes} from "react-router-dom";
 import './App.css';
+import Home from './pages/Home/home';
+import People from './pages/People/people';
+import Sayer from './pages/Sayer/sayer';
+import About from './pages/About/about';
+import Cusome from './pages/custome/cusome';
 
+import SearchContext from "./components/SearchContext"
 function App() {
+  const [searchResults, setSearchResults] = useState()
+  const value = useMemo(()=>({searchResults,setSearchResults}),[searchResults,setSearchResults])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchContext.Provider value={value}>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/people" element={<People/>}/>
+          <Route path="/sayer/:id" element={<Sayer/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/search" element={<Cusome/>}/>
+        </Routes>   
+      </SearchContext.Provider>
     </div>
   );
 }

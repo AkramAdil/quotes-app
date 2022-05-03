@@ -8,7 +8,7 @@ const Sayer = () => {
     let params = useParams()
     const [SayerData, setSayerData] = useState()
     useEffect(()=>{
-        fetch(`http://127.0.0.1:5000/sayer/${params.id}`)
+        fetch(`https://arquote-backend.herokuapp.com/sayer/${params.id}`)
         .then(data=>data.json())
         .then(results=>setSayerData(results))
     },[params.id])

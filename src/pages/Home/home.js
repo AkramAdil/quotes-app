@@ -7,17 +7,17 @@ const Home = () => {
     const [randomeQuote, setRandomeQuote] = useState()
 
     useEffect(()=>{
-        fetch('http://127.0.0.1:5000/random')
+        fetch('https://arquote-backend.herokuapp.com/random')
         .then(data=>data.json())
         .then(results=>setRandomeQuote(results))
     },[])
     const getNext = function(e) {
-        fetch(`http://127.0.0.1:5000/random/?nexId=${Number(randomeQuote.index)+1}`)
+        fetch(`https://arquote-backend.herokuapp.com/random/?nexId=${Number(randomeQuote.index)+1}`)
         .then(data=>data.json())
         .then(results=>setRandomeQuote(results))
     }
     const getPrev = function(e) {
-        fetch(`http://127.0.0.1:5000/random/?prevId=${Number(randomeQuote.index)-1}`)
+        fetch(`https://arquote-backend.herokuapp.com/random/?prevId=${Number(randomeQuote.index)-1}`)
         .then(data=>data.json())
         .then(results=>setRandomeQuote(results))
     }

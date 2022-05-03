@@ -10,7 +10,7 @@ export const SayersContainer = styled.div`
 const Sayers = () => {
     const [speakers,setSpeakers] = useState()
     useEffect(()=>{
-        fetch("http://127.0.0.1:5000/sayers")
+        fetch("https://arquote-backend.herokuapp.com/sayers")
         .then(data=>data.json())
         .then(results=>setSpeakers(results))
     },[])

@@ -1,6 +1,7 @@
 .container {
     margin: 0 auto;
     width: 1100px;
+    text-align: center;
 }
 @media screen and (max-width: 992px) {
     .container {

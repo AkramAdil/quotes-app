@@ -28,7 +28,9 @@ const Quotes = ({quotes}) => {
         <QuoteBox className="quotes">
             <h2>اقتباسات :</h2>
 
-            {quotes?quotes.map((singleQuote,i)=><QuoteText key={i}>{singleQuote}</QuoteText>):"جاري التحميل"}
+            {quotes?quotes.map((singleQuote,i)=>
+                <QuoteText key={i}>{singleQuote}</QuoteText>
+            ):"جاري التحميل"}
             
         </QuoteBox>
     );

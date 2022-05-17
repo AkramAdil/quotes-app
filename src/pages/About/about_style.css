@@ -5,4 +5,9 @@
     color: #065446;
     font-size: 20px;
     font-weight: bold;
+    margin: 0 3px;
+    text-decoration: none;
+}
+.author-name:hover {
+    text-decoration: underline;
 }

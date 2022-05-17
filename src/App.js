@@ -5,7 +5,7 @@ import Home from './pages/Home/home';
 import People from './pages/People/people';
 import Sayer from './pages/Sayer/sayer';
 import About from './pages/About/about';
-import Cusome from './pages/custome/cusome';
+import SearchPage from './pages/SearchPage/SearchPage';
 
 import SearchContext from "./components/SearchContext"
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Route path="/people" element={<People/>}/>
           <Route path="/sayer/:id" element={<Sayer/>}/>
           <Route path="/about" element={<About/>}/>
-          <Route path="/search" element={<Cusome/>}/>
+          <Route path="/search" element={<SearchPage/>}/>
         </Routes>   
       </SearchContext.Provider>
     </div>

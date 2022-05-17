@@ -6,8 +6,8 @@ const Header = () => {
     return (
         <div>
             <div className="header">
-                <div className="logo">
-                    <img src={logo} alt="شعار موقع اقتباس" title="شعار موقع اقتباس"/>
+                <div className="logo" style={{cursor:'pointer'}}>
+                    <Link to="/"><img src={logo} alt="شعار موقع اقتباس" title="شعار موقع اقتباس"/></Link>
                 </div>
                 <div className="nav-bar">
                     <ul className="navigation">

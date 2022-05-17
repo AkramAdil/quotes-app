@@ -36,8 +36,8 @@ const Search = () => {
         <SearchBox className="search">
             <form onSubmit={search}>
                 <div style={{border: '#158467 solid 3px',marginTop: '20px'}}>
-                    <i className="ri-search-line" style={{color: '#158467', fontSize: '20px', marginLeft:'5px'}}></i>
-                    <SearchBar type="text" placeholder="اكتب جزء من الاقتباس او الناطق" onChange={handleSearch}/>
+                    <i className="ri-search-line" style={{color: '#158467', fontSize: '20px', marginLeft:'5px',cursor:"pointer"}} onClick={search}></i>
+                    <SearchBar type="text" placeholder="ابحث عن اقتباس أو أشخاص" onChange={handleSearch}/>
                 </div>
             </form>
         </SearchBox>

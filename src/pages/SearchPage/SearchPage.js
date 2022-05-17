@@ -36,14 +36,14 @@ const ListHead = styled.p`
                 {
                     searchResults?(searchResults.targetSayers.length!==0?(
                         <SayersList sayersList={searchResults.targetSayers}/>
-                    ):<SearchMsg>لا يوجد أشخاص بهذا الاسم <i class="ri-error-warning-line"></i></SearchMsg>)
+                    ):<SearchMsg>لا يوجد أشخاص بهذا الاسم <i className="ri-error-warning-line"></i></SearchMsg>)
                     :"جاري التجميل"
                 }
             </SayersContainer>
             <ListHead>الاقتباسات:</ListHead>
             {searchResults?(searchResults.targetQuotes.length!==0?(
             <QuotesList quotesList={searchResults.targetQuotes}/>
-            ):<SearchMsg>لا يوجد اقتباسات تحتوي هذه الكلمة <i class="ri-error-warning-line"></i></SearchMsg>)
+            ):<SearchMsg>لا يوجد اقتباسات تحتوي هذه الكلمة <i className="ri-error-warning-line"></i></SearchMsg>)
             :"جاري التجميل"
             }
         </div>

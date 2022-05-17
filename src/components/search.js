@@ -12,13 +12,16 @@ const SearchBar = styled.input`
         width: 400px;
         padding: 25px;
         border: none;
-
         direction: rtl;
         font-size: 20px;
         font-family: 'Cairo', sans-serif;
         &:focus {
             border: none;
             outline: none;
+        }
+        @media screen and (max-width: 576px) {
+            width: 300px;
+            padding: 15px;
         }
     `
 const Search = () => {

@@ -4,20 +4,33 @@ import styled from 'styled-components'
 const InfoContainer = styled.div`
     margin-top: 30px;
     display: grid;
-    grid-template-columns: max-content auto;
-    grid-template-rows: 220px auto;
-    direction: rtl;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr;
+    @media screen and (max-width: 768px) {
+        justify-items: center;
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto auto auto; 
+    }
 `
 const SayerPic = styled.img`
-    grid-row-start: 1;
-    grid-row-end: 3;
-    width: 480px;
+    grid-area: 1 / 2 / 3 / 3;
+    width: 100%;
     height: 530px;
+    @media screen and (max-width: 992px) {
+        width: 390px;
+        height: 440px;
+    }
+    @media screen and (max-width: 768px) {
+        grid-area: 1 / 1 / 2 / 2; 
+    }
 `
 const AboutSayer = styled.p`
-grid-column-start: 2;
+grid-area: 2 / 1 / 3 / 2;
 margin-right: 20px;
 font-size: 18px;
+@media screen and (max-width: 768px) {
+    grid-area: 3 / 1 / 4 / 2;
+}
 `
 
 const SayerInfo = ({name,info,picPath}) => {

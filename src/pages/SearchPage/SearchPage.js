@@ -6,6 +6,7 @@ import Search from '../../components/search';
 import {SayersContainer} from '../People/sayers'
 import styled from 'styled-components'
 import QuotesList from './quotesList';
+import Spinner from '../../components/Spinner';
 const SearchPage = () => {
     const [searchResults, setSearchResults] = useState()
     const [searchParams] = useSearchParams()
@@ -37,14 +38,14 @@ const ListHead = styled.p`
                     searchResults?(searchResults.targetSayers.length!==0?(
                         <SayersList sayersList={searchResults.targetSayers}/>
                     ):<SearchMsg>لا يوجد أشخاص بهذا الاسم <i className="ri-error-warning-line"></i></SearchMsg>)
-                    :"جاري التجميل"
+                    :<Spinner/>
                 }
             </SayersContainer>
             <ListHead>الاقتباسات:</ListHead>
             {searchResults?(searchResults.targetQuotes.length!==0?(
-            <QuotesList quotesList={searchResults.targetQuotes}/>
-            ):<SearchMsg>لا يوجد اقتباسات تحتوي هذه الكلمة <i className="ri-error-warning-line"></i></SearchMsg>)
-            :"جاري التجميل"
+                <QuotesList quotesList={searchResults.targetQuotes}/>
+            ):<SearchMsg>لا يوجد اقتباسات تحتوي هذه الكلمة <i className="ri-error-warning-line"></i></SearchMsg>
+            ):<Spinner/>
             }
         </div>
     );

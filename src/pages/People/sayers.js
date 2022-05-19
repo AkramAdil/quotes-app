@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SayerCard from '../../components/sayerCard';
 import styled from "styled-components";
+import Spinner from '../../components/Spinner';
 export const SayersContainer = styled.div`
     margin-top: 50px;
     display: flex;
@@ -18,7 +19,7 @@ const Sayers = () => {
         <SayersContainer>
             {speakers?speakers.map(speaker=>
                 <SayerCard key={speaker._id} sayerId={speaker._id} name={speaker.source} picPath={require('../../'+speaker.picture)}/>
-            ):"جاري التحميل"}
+            ):<Spinner/>}
         </SayersContainer>
     );
 };

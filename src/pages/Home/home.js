@@ -3,6 +3,7 @@ import Header from '../../components/header';
 import Search from '../../components/search';
 import Content from './components/content';
 import "./homeStyle.css"
+import Spinner from "../../components/Spinner"
 const Home = () => {
     const [randomeQuote, setRandomeQuote] = useState()
 
@@ -25,7 +26,7 @@ const Home = () => {
         <div className="container">
             <Header/>
             <Search/>
-            {randomeQuote?<Content quote={randomeQuote} getNext={getNext} getPrev={getPrev}/>:"جاري التحميل"}
+            {randomeQuote?<Content quote={randomeQuote} getNext={getNext} getPrev={getPrev}/>:<Spinner/>}
         </div>
     );
 };

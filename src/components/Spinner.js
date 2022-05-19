@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Spiner = () => {
+const Spinner = () => {
     return (
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" style={{margin: "auto", background: "rgb(255, 255, 255)", display: "block", shapeRendering: "auto"}} width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -12,4 +12,4 @@ const Spiner = () => {
     );
 };
 
-export default Spiner;
+export default Spinner;

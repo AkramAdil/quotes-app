@@ -11,7 +11,7 @@ export const SayersContainer = styled.div`
 const Sayers = () => {
     const [speakers,setSpeakers] = useState()
     useEffect(()=>{
-        fetch("https://arquote-backend.herokuapp.com/sayers")
+        fetch("https://ar-quotes.herokuapp.com/sayers")
         .then(data=>data.json())
         .then(results=>setSpeakers(results))
     },[])

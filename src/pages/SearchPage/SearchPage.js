@@ -11,7 +11,7 @@ const SearchPage = () => {
     const [searchResults, setSearchResults] = useState()
     const [searchParams] = useSearchParams()
     useEffect(()=>{
-        fetch(`https://arquote-backend.herokuapp.com/search?searchTerm=${searchParams.get('searchTerm')}`)
+        fetch(`https://ar-quotes.herokuapp.com/search?searchTerm=${searchParams.get('searchTerm')}`)
         .then(data=>data.json())
         .then(results=>setSearchResults(results))
     },[searchParams])

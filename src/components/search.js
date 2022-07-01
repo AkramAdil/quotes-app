@@ -1,30 +1,10 @@
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom'
-import styled from "styled-components";
-const SearchBox = styled.div`
-        display: flex;
-        justify-content: flex-end;
-        @media screen and (max-width: 768px) {
-            justify-content: center;
-        }
-    `
-const SearchBar = styled.input`
-        width: 400px;
-        padding: 25px;
-        border: none;
-        direction: rtl;
-        font-size: 20px;
-        font-family: 'Cairo', sans-serif;
-        &:focus {
-            border: none;
-            outline: none;
-        }
-        @media screen and (max-width: 576px) {
-            width: 300px;
-            padding: 15px;
-        }
-    `
-const Search = () => {
+import { useTranslation } from 'react-i18next';
+import "./search.css"
+    const Search = () => {
+    const {t, i18n} = useTranslation()
+
     const history = useNavigate()
     const [searchTerm, setSearchTerm] = useState()
     const search = function (e) {
@@ -36,14 +16,14 @@ const Search = () => {
         setSearchTerm(e.target.value)
     }
     return (
-        <SearchBox className="search">
+        <div className="search">
             <form onSubmit={search}>
                 <div style={{border: '#158467 solid 3px',marginTop: '20px'}}>
-                    <i className="ri-search-line" style={{color: '#158467', fontSize: '20px', marginLeft:'5px',cursor:"pointer"}} onClick={search}></i>
-                    <SearchBar type="text" placeholder="ابحث عن اقتباس أو أشخاص" onChange={handleSearch}/>
+                    <input className='searchBar' type="text" placeholder={t("searchPlaceholder")} onChange={handleSearch}/>
+                    <i className={(i18n.language==="ar")?"ri-search-line icon":"ri-search-line icon en-icon"}></i>
                 </div>
             </form>
-        </SearchBox>
+        </div>
     );
 };
 

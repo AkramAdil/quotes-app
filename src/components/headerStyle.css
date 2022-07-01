@@ -1,6 +1,5 @@
 .header {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
 }
@@ -9,7 +8,6 @@
 }
 .navigation {
     display: flex;
-    flex-direction: row-reverse;
     list-style: none;
 
 }
@@ -20,6 +18,14 @@
 
 .navigation li:last-child {
     padding-left: 0px;
+}
+.navigation-en li:last-child {
+    padding-left: 30px;
+    padding-right: 0px;
+}
+.navigation li.lang {
+    margin-right: 10px;
+    cursor: pointer;
 }
 .navigation li a {
     text-decoration: none;

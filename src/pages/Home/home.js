@@ -4,21 +4,21 @@ import Search from '../../components/search';
 import Content from './components/content';
 import "./homeStyle.css"
 import Spinner from "../../components/Spinner"
+
 const Home = () => {
     const [randomeQuote, setRandomeQuote] = useState()
-
     useEffect(()=>{
-        fetch('https://ar-quotes.herokuapp.com/random')
+        fetch('http://127.0.0.1:5000/random')
         .then(data=>data.json())
         .then(results=>setRandomeQuote(results))
     },[])
     const getNext = function(e) {
-        fetch(`https://ar-quotes.herokuapp.com/random/?nexId=${Number(randomeQuote.index)+1}`)
+        fetch(`http://127.0.0.1:5000/random/?nexId=${Number(randomeQuote.index)+1}`)
         .then(data=>data.json())
         .then(results=>setRandomeQuote(results))
     }
     const getPrev = function(e) {
-        fetch(`https://ar-quotes.herokuapp.com/random/?prevId=${Number(randomeQuote.index)-1}`)
+        fetch(`http://127.0.0.1:5000/random/?prevId=${Number(randomeQuote.index)-1}`)
         .then(data=>data.json())
         .then(results=>setRandomeQuote(results))
     }
@@ -26,7 +26,7 @@ const Home = () => {
         <div className="container">
             <Header/>
             <Search/>
-            {randomeQuote?<Content quote={randomeQuote} getNext={getNext} getPrev={getPrev}/>:<Spinner/>}
+            {randomeQuote?<Content randomeQuote={randomeQuote} getNext={getNext} getPrev={getPrev}/>:<Spinner/>}
         </div>
     );
 };

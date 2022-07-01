@@ -1,0 +1,14 @@
+{
+    "title": "مرحباً باللغة العربية",
+    "navbar": [],
+    "home": "الرئيسية",
+    "speakers": "الناطقون",
+    "about": "من انا",
+    "nextBtn": "التالي",
+    "prevBtn": "السابق",
+    "searchPlaceholder": "ابحث عن اقتباس أو أشخاص",
+    "quotesSetction": "اقتباسات",
+    "peopleSection": "القائلون",
+    "quotesMsg": "لا يوجد اقتباسات تحتوي هذه الكلمة ",
+    "authorsMsg": "لا يوجد أشخاص بهذا الاسم "
+}

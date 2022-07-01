@@ -1,11 +1,14 @@
 import React from 'react';
 import MainButton from '../../../components/mainButton';
+import { useTranslation } from 'react-i18next';
 
 const NavigateQuotes = ({getNext,getPrev}) => {
+    const {t} = useTranslation()
+
     return (
         <div className="other-quote">
-            <MainButton getPrev={getPrev}>السابق &#8680;</MainButton>
-            <MainButton getNext={getNext}>&#8678; التالي</MainButton>
+            <MainButton getPrev={getPrev}>&#8680; {t("prevBtn")}</MainButton>
+            <MainButton getNext={getNext}>{t("nextBtn")} &#8678;</MainButton>
         </div>
     );
 };

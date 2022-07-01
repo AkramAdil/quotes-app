@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {useSearchParams} from "react-router-dom";
+import {useTranslation} from "react-i18next"
 import SayersList from './sayersList';
 import Header from '../../components/header';
 import Search from '../../components/search';
@@ -10,8 +11,10 @@ import Spinner from '../../components/Spinner';
 const SearchPage = () => {
     const [searchResults, setSearchResults] = useState()
     const [searchParams] = useSearchParams()
+    const {t} = useTranslation()
+
     useEffect(()=>{
-        fetch(`https://ar-quotes.herokuapp.com/search?searchTerm=${searchParams.get('searchTerm')}`)
+        fetch(`http://127.0.0.1:5000/search?searchTerm=${searchParams.get('searchTerm')}`)
         .then(data=>data.json())
         .then(results=>setSearchResults(results))
     },[searchParams])
@@ -24,7 +27,6 @@ const SearchMsg = styled.p`
 const ListHead = styled.p`
     color: #158467;
     font-size: 25px;
-    direction: rtl;
     font-weight: bold;
     margin-top: 15px
 `
@@ -32,19 +34,19 @@ const ListHead = styled.p`
         <div className='container'>
             <Header/>
             <Search/>
-            <ListHead>القائلون:</ListHead>
+            <ListHead>{t("peopleSection")}:</ListHead>
             <SayersContainer>
                 {
                     searchResults?(searchResults.targetSayers.length!==0?(
-                        <SayersList sayersList={searchResults.targetSayers}/>
-                    ):<SearchMsg>لا يوجد أشخاص بهذا الاسم <i className="ri-error-warning-line"></i></SearchMsg>)
+                        <SayersList sayersArray={searchResults.targetSayers}/>
+                    ):<SearchMsg><i className="ri-error-warning-line"></i> {t("authorsMsg")}</SearchMsg>)
                     :<Spinner/>
                 }
             </SayersContainer>
-            <ListHead>الاقتباسات:</ListHead>
+            <ListHead>{t("quotesSetction")}:</ListHead>
             {searchResults?(searchResults.targetQuotes.length!==0?(
-                <QuotesList quotesList={searchResults.targetQuotes}/>
-            ):<SearchMsg>لا يوجد اقتباسات تحتوي هذه الكلمة <i className="ri-error-warning-line"></i></SearchMsg>
+                <QuotesList quotesArray={searchResults.targetQuotes}/>
+            ):<SearchMsg dir="auto"><i className="ri-error-warning-line"></i> {t("quotesMsg")}</SearchMsg>
             ):<Spinner/>
             }
         </div>

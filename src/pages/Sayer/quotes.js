@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components'
-
+import { useTranslation } from "react-i18next";
 export const QuoteBox = styled.div`
     margin-top: 40px;
-    direction: rtl;
-    text-align: right;
+    text-align: start;
 `
 export const QuoteText = styled.p`
     width: 100%;
@@ -24,11 +23,13 @@ export const QuoteText = styled.p`
     }
 ` 
 const Quotes = ({quotes}) => {
+    const {t,i18n} = useTranslation()
+    const quotesList = (i18n.language==="ar")?{'quotes':quotes.ar_quotes}:{'quotes':quotes.en_quotes}
     return (
         <QuoteBox className="quotes">
-            <h2>اقتباسات :</h2>
+            <h2>{t("quotesSetction")} :</h2>
 
-            {quotes?quotes.map((singleQuote,i)=>
+            {quotes?quotesList.quotes.map((singleQuote,i)=>
                 <QuoteText key={i}>{singleQuote}</QuoteText>
             ):"جاري التحميل"}
             

@@ -12,7 +12,7 @@ function App() {
   const [searchResults, setSearchResults] = useState()
   const value = useMemo(()=>({searchResults,setSearchResults}),[searchResults,setSearchResults])
   return (
-    <div className="App">
+    <div className="App" dir="auto">
       <SearchContext.Provider value={value}>
         <Routes>
           <Route path="/" element={<Home/>}/>

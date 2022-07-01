@@ -14,7 +14,7 @@ const SearchPage = () => {
     const {t} = useTranslation()
 
     useEffect(()=>{
-        fetch(`http://127.0.0.1:5000/search?searchTerm=${searchParams.get('searchTerm')}`)
+        fetch(`https://ar-quotes.herokuapp.com/search?searchTerm=${searchParams.get('searchTerm')}`)
         .then(data=>data.json())
         .then(results=>setSearchResults(results))
     },[searchParams])

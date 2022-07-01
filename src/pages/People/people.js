@@ -7,7 +7,7 @@ import Spinner from '../../components/Spinner';
 const People = () => {
     const [sayers,setSayers] = useState()
     useEffect(()=>{
-        fetch("http://127.0.0.1:5000/sayers")
+        fetch("https://ar-quotes.herokuapp.com/sayers")
         .then(data=>data.json())
         .then(results=>setSayers(results))
     },[])
